@@ -13,15 +13,19 @@ const color = document.querySelector("#color");
 const lineWidth = document.querySelector("#line-width");
 const ctx = canvas.getContext("2d");
 
-const CANVAS_WIDTH = 800;
-const CANVAS_HEIGHT = 800;
-
+const CANVAS_SIZE = 800;
+let CANVAS_WIDTH = CANVAS_SIZE * 1.6;
+let CANVAS_HEIGHT = CANVAS_SIZE;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
+
 ctx.lineWidth = lineWidth.value;
 ctx.lineCap = "round";
 let isPainting = false;
 let isFilling = false;
+
+let rectX = 0;
+let rectY = 0;
 
 function onMove(event) {
   if (isPainting) {
@@ -65,10 +69,10 @@ function onColorClick(event) {
 function onModeClick() {
   if (isFilling) {
     isFilling = false;
-    modeBtn.innerText = "🩸 Fill";
+    modeBtn.innerText = "Fill";
   } else {
     isFilling = true;
-    modeBtn.innerText = "🎨 Draw";
+    modeBtn.innerText = "Draw";
   }
 }
 
@@ -79,7 +83,7 @@ function onCanvasClick() {
 }
 
 function onDestroyClick() {
-  const confirmDestroy = confirm("Are you sure you want to destroy this?");
+  const confirmDestroy = confirm("Are you sure you want to destroy this? 🤨");
   if (confirmDestroy) {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -89,7 +93,7 @@ function onDestroyClick() {
 function onEraserClick() {
   ctx.strokeStyle = "white";
   isFilling = false;
-  modeBtn.innerText = "🩸 Fill";
+  modeBtn.innerText = "Fill";
 }
 
 function onFileChange(event) {
@@ -97,11 +101,10 @@ function onFileChange(event) {
   const url = URL.createObjectURL(file);
   const image = new Image();
   image.src = url;
-  image.style.objectFit = "cover";
   image.onload = function () {
     ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    fileInput.value = null;
   };
+  fileInput.value = null;
 }
 
 function onDoubleClick(event) {

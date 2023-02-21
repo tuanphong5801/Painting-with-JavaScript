@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MEME MAKER</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>PhongPaint(PP)</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div class="title">
+      <img src="./images/mylogo.png" alt="" />
+    </div>
+    <div class="content"></div>
     <div class="color-options">
       <input type="color" id="color" />
       <div
@@ -63,15 +67,71 @@
         value="5"
         step="0.1"
       />
-      <button id="mode-btn">🩸 Fill</button>
-      <button id="destroy-btn">💣 Destroy</button>
-      <button id="eraser-btn">❌ Erase</button>
+      <button id="mode-btn">Fill</button>
+      <button id="destroy-btn">Destroy</button>
+      <button id="eraser-btn">Eraser</button>
       <label for="file">
-        📌 Add Photo
+        Add Photo
         <input type="file" accept="image/*" id="file" hidden />
       </label>
       <input type="text" placeholder="Add text here..." id="text" />
-      <button id="save">🖼️ Save image</button>
+      <div class="tools-text">
+        <div class="text-options">
+          <input type="number" min="1" value="24" max="100" id="fontSizes" />
+          <select id="fontTypes" autocomplete="off">
+            <option value="serif" style="font-family: serif">Serif</option>
+            <option value="sans-serif" style="font-family: sans-serif">
+              Sans-Serif
+            </option>
+            <option value="serif" style="font-family: serif">Serif</option>
+            <option value="sans-serif" style="font-family: sans-serif">
+              Sans-Serif
+            </option>
+            <option value="courier new" style="font-family: courier new">
+              Courier New
+            </option>
+            <option value="Lucida Console" style="font-family: Lucida Console">
+              Lucida Console
+            </option>
+            <option value="cursive" style="font-family: cursive">
+              Cursive
+            </option>
+            <option
+              value="Brush Script MT"
+              style="font-family: Brush Script MT"
+            >
+              Brush Script MT
+            </option>
+            <option
+              value="lucida Handwriting"
+              style="font-family: lucida Handwriting"
+            >
+              Lucida Handwriting
+            </option>
+            <option value="copperplate" style="font-family: copperplate">
+              Copperplate
+            </option>
+            <option value="papyrus" style="font-family: Papyrus">
+              Papyrus
+            </option>
+            <option value="tahoma" style="font-family: Tahoma" required>
+              Tahoma
+            </option>
+          </select>
+          <select id="fontWeights" required>
+            <option value="normal" selected>Normal</option>
+            <option value="bolder">Bold</option>
+            <option value="italic">Italic</option>
+            <option value="underline">Underline</option>
+          </select>
+        </div>
+        <button id="save">🖼️ Save image</button>
+      </div>
+    </div>
+    <div class="screen">
+      <img src="./images/profile.png" alt="" width="680px" />
+      <span>Please increase the screen size 😅</span>
+      <span>(min-width: 1380px)</span>
     </div>
     <script src="app.js"></script>
   </body>

@@ -1,0 +1,75 @@
+.btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: var(--canvasWidth);
+  background-color: cornsilk;
+  padding: 8px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: 1s ease-in-out forwards showBtns;
+  animation-delay: 0.8s;
+}
+
+button,
+label {
+  all: unset;
+  width: 200px;
+  height: 60px;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  background-color: #457b9d;
+  color: white;
+  font-weight: 500;
+  transition: inherit 0.4s;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+label {
+  object-fit: cover;
+}
+
+.tools-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-options {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+button#save {
+  margin-top: 8px;
+  padding: 4px 16px;
+  height: 40px;
+  font-size: 32px;
+  width: 80%;
+}
+
+button:hover,
+label:hover {
+  opacity: 0.6;
+  color: #fb6f92;
+  background-color: #fae1dd;
+}
+
+input#text {
+  all: unset;
+  padding: 20px 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: #fff;
+  width: 100%;
+}
