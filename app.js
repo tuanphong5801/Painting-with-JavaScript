@@ -6,6 +6,9 @@ const fileInput = document.getElementById("file");
 const textInput = document.getElementById("text");
 const saveBtn = document.getElementById("save");
 const inputColor = document.getElementById("color");
+const fontSizes = document.getElementById("fontSizes");
+const fontTypes = document.getElementById("fontTypes");
+const fontWeights = document.getElementById("fontWeights");
 const colorOptions = Array.from(
   document.getElementsByClassName("color-option")
 );
@@ -109,10 +112,13 @@ function onFileChange(event) {
 
 function onDoubleClick(event) {
   const text = textInput.value;
+  const textWeight = fontWeights.value;
+  const textSize = fontSizes.value;
+  const textFont = fontTypes.value;
   if (text !== "") {
     ctx.save();
     ctx.lineWidth = 1;
-    ctx.font = "68px serif";
+    ctx.font = `${textWeight} ${textSize}px ${textFont}`;
     ctx.fillText(text, event.offsetX, event.offsetY);
     ctx.restore();
   }

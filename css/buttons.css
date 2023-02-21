@@ -4,7 +4,7 @@
   align-items: center;
   gap: 20px;
   width: var(--canvasWidth);
-  background-color: cornsilk;
+  background-color: #ffe6a7;
   padding: 8px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -59,8 +59,8 @@ button#save {
 button:hover,
 label:hover {
   opacity: 0.6;
-  color: #fb6f92;
-  background-color: #fae1dd;
+  color: #7209b7;
+  background-color: #cdb4db;
 }
 
 input#text {

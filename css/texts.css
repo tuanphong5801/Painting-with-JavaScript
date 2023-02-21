@@ -31,9 +31,9 @@ input#text {
 
 .tools__text input:hover,
 .tools__text select:hover {
-  background-color: var(--btncolor);
+  background-color: #e4c1f9;
 }
 
 input#text:focus {
-  background-color: var(--btncolor);
+  background-color: #e4c1f9;
 }
